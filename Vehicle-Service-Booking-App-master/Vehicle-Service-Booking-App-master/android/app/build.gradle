@@ -1,0 +1,52 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+    id "com.google.gms.google-services" // Make sure this line is uncommented for Firebase services
+}
+
+android {
+    namespace = "com.example.app"
+    compileSdkVersion 34  // Update to 34
+
+    ndkVersion = "23.1.7779620"  // Optional: Set the NDK version if necessary, adjust accordingly
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    defaultConfig {
+        applicationId = "com.example.app"
+        minSdkVersion 23  // Ensure this is set to 23 as required by firebase_auth
+        targetSdkVersion 34  // Update to 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        debug {
+            // Disable shrinking for the debug build to avoid this issue
+            shrinkResources false
+            minifyEnabled false  // Ensure this is disabled for debug builds
+        }
+        
+        release {
+            // Enable code and resource shrinking only for release builds
+            shrinkResources false  // Or true, if you want to shrink resources
+            minifyEnabled false    // Set to true if you want code shrinking
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            signingConfig signingConfigs.debug  // Use release signingConfig for production
+        }
+    }
+}
+
+flutter {
+    source = "../.."  // Flutter source path remains the same
+}

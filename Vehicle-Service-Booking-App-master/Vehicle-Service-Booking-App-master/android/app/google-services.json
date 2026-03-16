@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "791524580237",
+    "project_id": "vs-center",
+    "storage_bucket": "vs-center.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791524580237:android:5b7b06bc24c3555ce6bbc4",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYjMJvs9IZz_VVSCXu7Xax9Lc8Kr6TKj4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
